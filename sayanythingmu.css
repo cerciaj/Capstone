@@ -1,0 +1,505 @@
+/**
+ *------
+ * BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
+ * SayAnythingMU implementation : © <Your name here> <Your email address here>
+ *
+ * This code has been produced on the BGA studio platform for use on http://boardgamearena.com.
+ * See http://en.boardgamearena.com/#!doc/Studio for more information.
+ * -----
+ *
+ * sayanythingmu.css
+ *
+ * SayAnythingMU stylesheet
+ *
+ */
+
+/*
+    This is the CSS stylesheet of your game User Interface.
+    
+    Styles defined on this file will be applied to the HTML elements you define in your
+    HTML template (sayanythingmu_sayanythingmu.tpl), and to HTML elements you create dynamically
+    (in sayanythingmu.js).
+    
+    Usually, you are using CSS to:
+    
+    1°) define the overall layout of your game
+        (ex: place the board on the top left, place player's hand beside, place the deck on the right, ...).
+
+    2°) create your CSS-sprites:
+        All images of your games should be gathered into a small number of image files. Then, using
+        background-image and background-position CSS properties, you create HTML blocks that can 
+        display these images correctly (see example below).
+    
+    3°) ... anything else:
+        It is really easy to add and remove CSS classes dynamically from your Javascript with
+        dojo.addClass and dojo.removeClass. It is also easy to check if an element has a class
+        (dojo.hasClass) or to get all elements with a specific class (dojo.query). This is why,
+        very often, using CSS classes for the logic of your user interface allow you to do complex
+        thing easily.
+        
+        
+     Note: on the production platform, this file will be compressed and comments will be removed.
+           Consequently, don't hesitate to put as many comments as necessary.
+*/
+
+
+/* Note: you must not use any @import directive */
+
+
+/********* You can start writing your CSS below this line: **********/
+
+
+/*
+    Example of CSS sprites (a black token and a white token, 20x20px each, embedded in the same "tokens.png" 40x20px image):
+
+    .white_token {
+        background-image: url('img/tokens.png');
+        background-position: 0px 0px;
+    }
+    .black_token {
+        background-image: url('img/tokens.png');
+        background-position: -20px 0px;
+    }
+    .token {
+        width: 20px;
+        height: 20px;
+        background-repeat: none;
+    }
+*/
+        .board {
+            position: relative;
+            width: 1000px;
+            height: 600px;
+            border-style: solid;
+            border-color: black;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .player_0_board{
+            background-image: url('img/AnswerBoards.png');
+            background-position: 0px 0px;
+ 	    width: 250px;
+            height: 170px;
+            background-size: 1000px;
+            background-repeat: none;
+        }
+
+        .back_pink {
+            background-image: url('img/AnswerBoards.png');
+            background-position: 0px -170px;
+ 	    width: 250px;
+            height: 170px;
+            background-size: 1000px;
+            background-repeat: none;
+
+        }
+
+        .player_1_board {
+            background-image: url('img/AnswerBoards.png');
+            background-position: -250px 0px;
+ 	    width: 250px;
+            height: 170px;
+            background-size: 1000px;
+            background-repeat: none;
+
+        }
+
+        .back_grey {
+            background-image: url('img/AnswerBoards.png');
+            background-position: -250px -170px;
+        }
+
+        .player_2_board {
+            background-image: url('img/AnswerBoards.png');
+            background-position: 500px 0px;
+ 	    width: 250px;
+            height: 170px;
+            background-size: 1000px;
+            background-repeat: none;
+
+        }
+
+        .back_green {
+            background-image: url('img/AnswerBoards.png');
+            background-position: 500px -170px;
+        }
+
+        .player_3_board {
+            background-image: url('img/AnswerBoards.png');
+            background-position: 250px 0px;
+ 	    width: 250px;
+            height: 170px;
+            background-size: 1000px;
+            background-repeat: none;
+
+        }
+
+        .back_yellow {
+            background-image: url('img/AnswerBoards.png');
+            background-position: 250px -170px;
+        }
+
+        .player_4_board {
+            background-image: url('img/AnswerBoards.png');
+            background-position: 0px -340px;
+ 	    width: 250px;
+            height: 170px;
+            background-size: 1000px;
+            background-repeat: none;
+
+        }
+
+        .back_blue {
+            background-image: url('img/AnswerBoards.png');
+            background-position: 0px -510px;
+        }
+
+        .player_5_board {
+            background-image: url('img/AnswerBoards.png');
+            background-position: -250px -340px;
+ 	    width: 250px;
+            height: 170px;
+            background-size: 1000px;
+            background-repeat: none;
+
+        }
+
+        .back_brown {
+            background-image: url('img/AnswerBoards.png');
+            background-position: -250px -510px;
+        }
+
+        .player_6_board {
+            background-image: url('img/AnswerBoards.png');
+            background-position: 500px -340px;
+ 	    width: 250px;
+            height: 170px;
+            background-size: 1000px;
+            background-repeat: none;
+
+        }
+
+        .back_orange {
+            background-image: url('img/AnswerBoards.png');
+            background-position: 500px -510px;
+        }
+
+        .player_7_board {
+            background-image: url('img/AnswerBoards.png');
+            background-position: 250px -340px;
+ 	    width: 250px;
+            height: 170px;
+            background-size: 1000px;
+            background-repeat: none;
+
+        }
+
+        .back_purple {
+            background-image: url('img/AnswerBoards.png');
+            background-position: 250px -510px;
+        }
+	
+	.dot {
+		height: 20px;
+		width: 20px;
+		background-color: purple;
+		border-radius: 50%;
+		display: inline-block;
+		margin: 5px;
+	}
+	
+	.judge {
+		height: 50px;
+		width: 50px;
+		background-color: red;
+		border-radius: 50%;
+		display: inline-block;
+		margin: 5px;
+		text-align: center;
+		font-size: 15px;
+		float: right;
+	}
+
+	.options {
+		opacity: 1;
+	}
+
+        	#O1 {
+		padding: 1px 1px;
+		margin-top:12px;
+	}
+
+	#O2 {
+		padding: 1px 1px;
+		margin-top:7px;
+	}
+
+	#O3 {
+		padding: 1px 1px;
+		margin-top:7px;
+	}
+
+	#O4 {
+		padding: 1px 1px;
+		margin-top:7px;
+	}
+
+	#O5 {
+		padding: 1px 1px;
+		margin-top:7px;
+	}
+	.center_card {
+	    background-image:url('img/QuestionCards.jpg');
+            background-position: 0px 0px;
+            width: 285.5px;
+            height: 143.5px;
+            background-size: 285.5px;
+            background-repeat: none;
+	}	
+	
+	.card2 {
+		background-image:url('img/SA Question Card_Page_02.png');
+	}
+	
+	.card3 {
+		background-image:url('img/SA Question Card_Page_03.png');
+	}
+	.card4 {
+		background-image:url('img/SA Question Card_Page_04.png');
+	}
+	.card5 {
+		background-image:url('img/SA Question Card_Page_05.png');
+	}
+	.card6 {
+		background-image:url('img/SA Question Card_Page_06.png');
+	}
+	.card7 {
+		background-image:url('img/SA Question Card_Page_07.png');
+	}
+	.card8 {
+		background-image:url('img/SA Question Card_Page_08.png');
+	}
+	.card9 {
+		background-image:url('img/SA Question Card_Page_09.png');
+	}
+	.card10 {
+		background-image:url('img/SA Question Card_Page_10.png');
+	}
+	.card11 {
+		background-image:url('img/SA Question Card_Page_11.png');
+	}
+	.card12 {
+		background-image:url('img/SA Question Card_Page_12.png');
+	}
+	
+	.card13 {
+		background-image:url('img/SA Question Card_Page_13.png');
+	}
+	.card14 {
+		background-image:url('img/SA Question Card_Page_14.png');
+	}
+	.card15 {
+		background-image:url('img/SA Question Card_Page_15.png');
+	}
+	.card16 {
+		background-image:url('img/SA Question Card_Page_16.png');
+	}
+	.card17 {
+		background-image:url('img/SA Question Card_Page_17.png');
+	}
+	.card18 {
+		background-image:url('img/SA Question Card_Page_18.png');
+	}
+	.card19 {
+		background-image:url('img/SA Question Card_Page_19.png');
+	}
+	.card20 {
+		background-image:url('img/SA Question Card_Page_20.png');
+	}
+	.card21 {
+		background-image:url('img/SA Question Card_Page_21.png');
+	}
+	.card22 {
+		background-image:url('img/SA Question Card_Page_22.png');
+	}
+	
+	.card23 {
+		background-image:url('img/SA Question Card_Page_23.png');
+	}
+	.card24 {
+		background-image:url('img/SA Question Card_Page_24.png');
+	}
+	.card25 {
+		background-image:url('img/SA Question Card_Page_25.png');
+	}
+	.card26 {
+		background-image:url('img/SA Question Card_Page_26.png');
+	}
+	.card27 {
+		background-image:url('img/SA Question Card_Page_27.png');
+	}
+	.card28 {
+		background-image:url('img/SA Question Card_Page_28.png');
+	}
+	.card29 {
+		background-image:url('img/SA Question Card_Page_29.png');
+	}
+	.card30 {
+		background-image:url('img/SA Question Card_Page_30.png');
+	}
+	.card31 {
+		background-image:url('img/SA Question Card_Page_31.png');
+	}
+	.card32 {
+		background-image:url('img/SA Question Card_Page_32.png');
+	}
+	
+	.card33 {
+		background-image:url('img/SA Question Card_Page_33.png');
+	}
+	.card34 {
+		background-image:url('img/SA Question Card_Page_34.png');
+	}
+	.card35 {
+		background-image:url('img/SA Question Card_Page_35.png');
+	}
+	.card36 {
+		background-image:url('img/SA Question Card_Page_36.png');
+	}
+	.card37 {
+		background-image:url('img/SA Question Card_Page_37.png');
+	}
+	.card38 {
+		background-image:url('img/SA Question Card_Page_38.png');
+	}
+	.card39 {
+		background-image:url('img/SA Question Card_Page_39.png');
+	}
+	.card40 {
+		background-image:url('img/SA Question Card_Page_40.png');
+	}
+	.card41 {
+		background-image:url('img/SA Question Card_Page_41.png');
+	}
+	.card42 {
+		background-image:url('img/SA Question Card_Page_42.png');
+	}
+	
+	.card43 {
+		background-image:url('img/SA Question Card_Page_43.png');
+	}
+	.card44 {
+		background-image:url('img/SA Question Card_Page_44.png');
+	}
+	.card45 {
+		background-image:url('img/SA Question Card_Page_45.png');
+	}
+	.card46 {
+		background-image:url('img/SA Question Card_Page_46.png');
+	}
+	.card47 {
+		background-image:url('img/SA Question Card_Page_47.png');
+	}
+	.card48 {
+		background-image:url('img/SA Question Card_Page_48.png');
+	}
+	.card49 {
+		background-image:url('img/SA Question Card_Page_49.png');
+	}
+	.card50 {
+		background-image:url('img/SA Question Card_Page_50.png');
+	}
+	.card51 {
+		background-image:url('img/SA Question Card_Page_51.png');
+	}
+	.card52 {
+		background-image:url('img/SA Question Card_Page_52.png');
+	}
+	
+	.card53 {
+		background-image:url('img/SA Question Card_Page_53.png');
+	}
+	.card54 {
+		background-image:url('img/SA Question Card_Page_54.png');
+	}
+	.card55 {
+		background-image:url('img/SA Question Card_Page_55.png');
+	}
+	.card56 {
+		background-image:url('img/SA Question Card_Page_56.png');
+	}
+	.card57 {
+		background-image:url('img/SA Question Card_Page_57.png');
+	}
+	.card58 {
+		background-image:url('img/SA Question Card_Page_58.png');
+	}
+	.card59 {
+		background-image:url('img/SA Question Card_Page_59.png');
+	}
+	.card60 {
+		background-image:url('img/SA Question Card_Page_60.png');
+	}
+	.card61 {
+		background-image:url('img/SA Question Card_Page_61.png');
+	}
+	.card62 {
+		background-image:url('img/SA Question Card_Page_62.png');
+	}
+	
+	.card63 {
+		background-image:url('img/SA Question Card_Page_63.png');
+	}
+	.card64 {
+		background-image:url('img/SA Question Card_Page_64.png');
+	}
+	.card65 {
+		background-image:url('img/SA Question Card_Page_65.png');
+	}
+	.card66 {
+		background-image:url('img/SA Question Card_Page_66.png');
+	}
+	.card67 {
+		background-image:url('img/SA Question Card_Page_67.png');
+	}
+	.card68 {
+		background-image:url('img/SA Question Card_Page_68.png');
+	}
+	.card69 {
+		background-image:url('img/SA Question Card_Page_69.png');
+	}
+	.card70 {
+		background-image:url('img/SA Question Card_Page_70.png');
+	}
+	.card71 {
+		background-image:url('img/SA Question Card_Page_71.png');
+	}
+	.card72 {
+		background-image:url('img/SA Question Card_Page_72.png');
+	}
+	
+	.card73 {
+		background-image:url('img/SA Question Card_Page_73.png');
+	}
+	.card74 {
+		background-image:url('img/SA Question Card_Page_74.png');
+	}
+	.card75 {
+		background-image:url('img/SA Question Card_Page_75.png');
+	}
+	.card76 {
+		background-image:url('img/SA Question Card_Page_76.png');
+	}
+	.card77 {
+		background-image:url('img/SA Question Card_Page_77.png');
+	}
+	.card78 {
+		background-image:url('img/SA Question Card_Page_78.png');
+	}
+	.card79 {
+		background-image:url('img/SA Question Card_Page_79.png');
+	}
+	.card80 {
+		background-image:url('img/SA Question Card_Page_80.png');
+	}
